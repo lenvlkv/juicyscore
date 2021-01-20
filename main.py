@@ -1,11 +1,10 @@
-import json
 from flask import Flask, request
 
 app = Flask(__name__)
 
 
 @app.route('/get_token')
-def hello_world():
+def handle_get_token():
     db_table_id = request.args.get('id')
     # TODO: read token from table==db_table_id and return token from there 
     output_token = 'TODO'
@@ -13,7 +12,7 @@ def hello_world():
 
 
 @app.route('/set_token', methods=['POST'])
-def hello_post():
+def handle_set_token():
     input_data = request.json
     input_token = input_data['id']
     # input_token example is 'tok.qwerty123-456.A'
